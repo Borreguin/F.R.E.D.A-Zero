@@ -1,0 +1,1565 @@
+2019-06-20 11:38:47,930 - ERROR - Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1043, in _get_socket_no_auth
+    sock_info = self.sockets.popleft()
+IndexError: pop from an empty deque
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 973, in connect
+    sock = _configured_socket(self.address, self.opts)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 848, in _configured_socket
+    sock = _create_connection(address, options)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 829, in _create_connection
+    raise err
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 822, in _create_connection
+    sock.connect(sa)
+OSError: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ".\my_lib\mongo_db_manager\RTDB_mongo_driver.py", line 545, in insert_register
+    }, upsert=True)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\collection.py", line 1002, in update_one
+    session=session),
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\collection.py", line 858, in _update_retryable
+    _update, session)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1280, in _retryable_write
+    return self._retry_with_session(retryable, func, s, None)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1226, in _retry_with_session
+    with self._get_socket(server) as sock_info:
+  File "C:\ProgramData\Anaconda3\lib\contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1094, in _get_socket
+    with server.get_socket(self.__all_credentials) as sock_info:
+  File "C:\ProgramData\Anaconda3\lib\contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1009, in get_socket
+    sock_info = self._get_socket_no_auth()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1046, in _get_socket_no_auth
+    sock_info = self.connect()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 977, in connect
+    _raise_connection_failure(self.address, error)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 283, in _raise_connection_failure
+    raise AutoReconnect(msg)
+pymongo.errors.AutoReconnect: localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+
+localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+2019-06-20 11:38:48,498 - ERROR - Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1043, in _get_socket_no_auth
+    sock_info = self.sockets.popleft()
+IndexError: pop from an empty deque
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 973, in connect
+    sock = _configured_socket(self.address, self.opts)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 848, in _configured_socket
+    sock = _create_connection(address, options)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 829, in _create_connection
+    raise err
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 822, in _create_connection
+    sock.connect(sa)
+OSError: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ".\my_lib\mongo_db_manager\RTDB_mongo_driver.py", line 545, in insert_register
+    }, upsert=True)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\collection.py", line 1002, in update_one
+    session=session),
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\collection.py", line 858, in _update_retryable
+    _update, session)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1280, in _retryable_write
+    return self._retry_with_session(retryable, func, s, None)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1226, in _retry_with_session
+    with self._get_socket(server) as sock_info:
+  File "C:\ProgramData\Anaconda3\lib\contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1094, in _get_socket
+    with server.get_socket(self.__all_credentials) as sock_info:
+  File "C:\ProgramData\Anaconda3\lib\contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1009, in get_socket
+    sock_info = self._get_socket_no_auth()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1046, in _get_socket_no_auth
+    sock_info = self.connect()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 977, in connect
+    _raise_connection_failure(self.address, error)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 283, in _raise_connection_failure
+    raise AutoReconnect(msg)
+pymongo.errors.AutoReconnect: localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+
+localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+2019-06-20 11:38:48,710 - WARNING - localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+2019-06-20 11:38:48,710 - INFO - The MongoDb is not running. Starting a new instance
+2019-06-20 11:38:48,710 - INFO - Starting MongoDb!
+2019-06-20 11:38:48,711 - ERROR - [WinError 6] The handle is invalid
+2019-06-20 11:38:49,563 - ERROR - Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1043, in _get_socket_no_auth
+    sock_info = self.sockets.popleft()
+IndexError: pop from an empty deque
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 973, in connect
+    sock = _configured_socket(self.address, self.opts)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 848, in _configured_socket
+    sock = _create_connection(address, options)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 829, in _create_connection
+    raise err
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 822, in _create_connection
+    sock.connect(sa)
+OSError: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ".\my_lib\mongo_db_manager\RTDB_mongo_driver.py", line 545, in insert_register
+    }, upsert=True)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\collection.py", line 1002, in update_one
+    session=session),
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\collection.py", line 858, in _update_retryable
+    _update, session)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1280, in _retryable_write
+    return self._retry_with_session(retryable, func, s, None)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1226, in _retry_with_session
+    with self._get_socket(server) as sock_info:
+  File "C:\ProgramData\Anaconda3\lib\contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1094, in _get_socket
+    with server.get_socket(self.__all_credentials) as sock_info:
+  File "C:\ProgramData\Anaconda3\lib\contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1009, in get_socket
+    sock_info = self._get_socket_no_auth()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1046, in _get_socket_no_auth
+    sock_info = self.connect()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 977, in connect
+    _raise_connection_failure(self.address, error)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 283, in _raise_connection_failure
+    raise AutoReconnect(msg)
+pymongo.errors.AutoReconnect: localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+
+localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+2019-06-20 11:38:50,113 - ERROR - Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1043, in _get_socket_no_auth
+    sock_info = self.sockets.popleft()
+IndexError: pop from an empty deque
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 973, in connect
+    sock = _configured_socket(self.address, self.opts)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 848, in _configured_socket
+    sock = _create_connection(address, options)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 829, in _create_connection
+    raise err
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 822, in _create_connection
+    sock.connect(sa)
+OSError: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ".\my_lib\mongo_db_manager\RTDB_mongo_driver.py", line 545, in insert_register
+    }, upsert=True)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\collection.py", line 1002, in update_one
+    session=session),
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\collection.py", line 858, in _update_retryable
+    _update, session)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1280, in _retryable_write
+    return self._retry_with_session(retryable, func, s, None)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1226, in _retry_with_session
+    with self._get_socket(server) as sock_info:
+  File "C:\ProgramData\Anaconda3\lib\contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1094, in _get_socket
+    with server.get_socket(self.__all_credentials) as sock_info:
+  File "C:\ProgramData\Anaconda3\lib\contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1009, in get_socket
+    sock_info = self._get_socket_no_auth()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1046, in _get_socket_no_auth
+    sock_info = self.connect()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 977, in connect
+    _raise_connection_failure(self.address, error)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 283, in _raise_connection_failure
+    raise AutoReconnect(msg)
+pymongo.errors.AutoReconnect: localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+
+localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+2019-06-20 11:38:50,118 - ERROR - Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1043, in _get_socket_no_auth
+    sock_info = self.sockets.popleft()
+IndexError: pop from an empty deque
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 973, in connect
+    sock = _configured_socket(self.address, self.opts)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 848, in _configured_socket
+    sock = _create_connection(address, options)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 829, in _create_connection
+    raise err
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 822, in _create_connection
+    sock.connect(sa)
+OSError: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ".\my_lib\mongo_db_manager\RTDB_mongo_driver.py", line 545, in insert_register
+    }, upsert=True)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\collection.py", line 1002, in update_one
+    session=session),
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\collection.py", line 858, in _update_retryable
+    _update, session)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1280, in _retryable_write
+    return self._retry_with_session(retryable, func, s, None)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1226, in _retry_with_session
+    with self._get_socket(server) as sock_info:
+  File "C:\ProgramData\Anaconda3\lib\contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1094, in _get_socket
+    with server.get_socket(self.__all_credentials) as sock_info:
+  File "C:\ProgramData\Anaconda3\lib\contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1009, in get_socket
+    sock_info = self._get_socket_no_auth()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1046, in _get_socket_no_auth
+    sock_info = self.connect()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 977, in connect
+    _raise_connection_failure(self.address, error)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 283, in _raise_connection_failure
+    raise AutoReconnect(msg)
+pymongo.errors.AutoReconnect: localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+
+localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+2019-06-20 11:38:50,252 - WARNING - localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+2019-06-20 11:38:50,252 - INFO - The MongoDb is not running. Starting a new instance
+2019-06-20 11:38:50,252 - INFO - Starting MongoDb!
+2019-06-20 11:38:50,253 - ERROR - [WinError 6] The handle is invalid
+2019-06-20 11:38:50,730 - ERROR - Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1043, in _get_socket_no_auth
+    sock_info = self.sockets.popleft()
+IndexError: pop from an empty deque
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 973, in connect
+    sock = _configured_socket(self.address, self.opts)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 848, in _configured_socket
+    sock = _create_connection(address, options)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 829, in _create_connection
+    raise err
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 822, in _create_connection
+    sock.connect(sa)
+OSError: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ".\my_lib\mongo_db_manager\RTDB_mongo_driver.py", line 545, in insert_register
+    }, upsert=True)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\collection.py", line 1002, in update_one
+    session=session),
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\collection.py", line 858, in _update_retryable
+    _update, session)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1280, in _retryable_write
+    return self._retry_with_session(retryable, func, s, None)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1226, in _retry_with_session
+    with self._get_socket(server) as sock_info:
+  File "C:\ProgramData\Anaconda3\lib\contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1094, in _get_socket
+    with server.get_socket(self.__all_credentials) as sock_info:
+  File "C:\ProgramData\Anaconda3\lib\contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1009, in get_socket
+    sock_info = self._get_socket_no_auth()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1046, in _get_socket_no_auth
+    sock_info = self.connect()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 977, in connect
+    _raise_connection_failure(self.address, error)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 283, in _raise_connection_failure
+    raise AutoReconnect(msg)
+pymongo.errors.AutoReconnect: localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+
+localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+2019-06-20 11:38:51,305 - ERROR - Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1043, in _get_socket_no_auth
+    sock_info = self.sockets.popleft()
+IndexError: pop from an empty deque
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 973, in connect
+    sock = _configured_socket(self.address, self.opts)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 848, in _configured_socket
+    sock = _create_connection(address, options)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 829, in _create_connection
+    raise err
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 822, in _create_connection
+    sock.connect(sa)
+OSError: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ".\my_lib\mongo_db_manager\RTDB_mongo_driver.py", line 545, in insert_register
+    }, upsert=True)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\collection.py", line 1002, in update_one
+    session=session),
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\collection.py", line 858, in _update_retryable
+    _update, session)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1280, in _retryable_write
+    return self._retry_with_session(retryable, func, s, None)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1226, in _retry_with_session
+    with self._get_socket(server) as sock_info:
+  File "C:\ProgramData\Anaconda3\lib\contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1094, in _get_socket
+    with server.get_socket(self.__all_credentials) as sock_info:
+  File "C:\ProgramData\Anaconda3\lib\contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1009, in get_socket
+    sock_info = self._get_socket_no_auth()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1046, in _get_socket_no_auth
+    sock_info = self.connect()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 977, in connect
+    _raise_connection_failure(self.address, error)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 283, in _raise_connection_failure
+    raise AutoReconnect(msg)
+pymongo.errors.AutoReconnect: localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+
+localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+2019-06-20 11:38:51,818 - ERROR - Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1043, in _get_socket_no_auth
+    sock_info = self.sockets.popleft()
+IndexError: pop from an empty deque
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 973, in connect
+    sock = _configured_socket(self.address, self.opts)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 848, in _configured_socket
+    sock = _create_connection(address, options)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 829, in _create_connection
+    raise err
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 822, in _create_connection
+    sock.connect(sa)
+OSError: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ".\my_lib\mongo_db_manager\RTDB_mongo_driver.py", line 545, in insert_register
+    }, upsert=True)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\collection.py", line 1002, in update_one
+    session=session),
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\collection.py", line 858, in _update_retryable
+    _update, session)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1280, in _retryable_write
+    return self._retry_with_session(retryable, func, s, None)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1226, in _retry_with_session
+    with self._get_socket(server) as sock_info:
+  File "C:\ProgramData\Anaconda3\lib\contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1094, in _get_socket
+    with server.get_socket(self.__all_credentials) as sock_info:
+  File "C:\ProgramData\Anaconda3\lib\contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1009, in get_socket
+    sock_info = self._get_socket_no_auth()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1046, in _get_socket_no_auth
+    sock_info = self.connect()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 977, in connect
+    _raise_connection_failure(self.address, error)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 283, in _raise_connection_failure
+    raise AutoReconnect(msg)
+pymongo.errors.AutoReconnect: localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+
+localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+2019-06-20 11:38:51,838 - ERROR - Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1043, in _get_socket_no_auth
+    sock_info = self.sockets.popleft()
+IndexError: pop from an empty deque
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 973, in connect
+    sock = _configured_socket(self.address, self.opts)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 848, in _configured_socket
+    sock = _create_connection(address, options)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 829, in _create_connection
+    raise err
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 822, in _create_connection
+    sock.connect(sa)
+OSError: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ".\my_lib\mongo_db_manager\RTDB_mongo_driver.py", line 545, in insert_register
+    }, upsert=True)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\collection.py", line 1002, in update_one
+    session=session),
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\collection.py", line 858, in _update_retryable
+    _update, session)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1280, in _retryable_write
+    return self._retry_with_session(retryable, func, s, None)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1226, in _retry_with_session
+    with self._get_socket(server) as sock_info:
+  File "C:\ProgramData\Anaconda3\lib\contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1094, in _get_socket
+    with server.get_socket(self.__all_credentials) as sock_info:
+  File "C:\ProgramData\Anaconda3\lib\contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1009, in get_socket
+    sock_info = self._get_socket_no_auth()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1046, in _get_socket_no_auth
+    sock_info = self.connect()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 977, in connect
+    _raise_connection_failure(self.address, error)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 283, in _raise_connection_failure
+    raise AutoReconnect(msg)
+pymongo.errors.AutoReconnect: localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+
+localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+2019-06-20 11:38:51,845 - ERROR - Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1043, in _get_socket_no_auth
+    sock_info = self.sockets.popleft()
+IndexError: pop from an empty deque
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 973, in connect
+    sock = _configured_socket(self.address, self.opts)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 848, in _configured_socket
+    sock = _create_connection(address, options)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 829, in _create_connection
+    raise err
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 822, in _create_connection
+    sock.connect(sa)
+OSError: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ".\my_lib\mongo_db_manager\RTDB_mongo_driver.py", line 545, in insert_register
+    }, upsert=True)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\collection.py", line 1002, in update_one
+    session=session),
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\collection.py", line 858, in _update_retryable
+    _update, session)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1280, in _retryable_write
+    return self._retry_with_session(retryable, func, s, None)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1226, in _retry_with_session
+    with self._get_socket(server) as sock_info:
+  File "C:\ProgramData\Anaconda3\lib\contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1094, in _get_socket
+    with server.get_socket(self.__all_credentials) as sock_info:
+  File "C:\ProgramData\Anaconda3\lib\contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1009, in get_socket
+    sock_info = self._get_socket_no_auth()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1046, in _get_socket_no_auth
+    sock_info = self.connect()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 977, in connect
+    _raise_connection_failure(self.address, error)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 283, in _raise_connection_failure
+    raise AutoReconnect(msg)
+pymongo.errors.AutoReconnect: localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+
+localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+2019-06-20 11:38:52,414 - ERROR - Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1043, in _get_socket_no_auth
+    sock_info = self.sockets.popleft()
+IndexError: pop from an empty deque
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 973, in connect
+    sock = _configured_socket(self.address, self.opts)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 848, in _configured_socket
+    sock = _create_connection(address, options)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 829, in _create_connection
+    raise err
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 822, in _create_connection
+    sock.connect(sa)
+OSError: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ".\my_lib\mongo_db_manager\RTDB_mongo_driver.py", line 545, in insert_register
+    }, upsert=True)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\collection.py", line 1002, in update_one
+    session=session),
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\collection.py", line 858, in _update_retryable
+    _update, session)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1280, in _retryable_write
+    return self._retry_with_session(retryable, func, s, None)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1226, in _retry_with_session
+    with self._get_socket(server) as sock_info:
+  File "C:\ProgramData\Anaconda3\lib\contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1094, in _get_socket
+    with server.get_socket(self.__all_credentials) as sock_info:
+  File "C:\ProgramData\Anaconda3\lib\contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1009, in get_socket
+    sock_info = self._get_socket_no_auth()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1046, in _get_socket_no_auth
+    sock_info = self.connect()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 977, in connect
+    _raise_connection_failure(self.address, error)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 283, in _raise_connection_failure
+    raise AutoReconnect(msg)
+pymongo.errors.AutoReconnect: localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+
+localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+2019-06-20 11:38:52,747 - ERROR - Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1043, in _get_socket_no_auth
+    sock_info = self.sockets.popleft()
+IndexError: pop from an empty deque
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 973, in connect
+    sock = _configured_socket(self.address, self.opts)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 848, in _configured_socket
+    sock = _create_connection(address, options)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 829, in _create_connection
+    raise err
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 822, in _create_connection
+    sock.connect(sa)
+OSError: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ".\my_lib\mongo_db_manager\RTDB_mongo_driver.py", line 545, in insert_register
+    }, upsert=True)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\collection.py", line 1002, in update_one
+    session=session),
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\collection.py", line 858, in _update_retryable
+    _update, session)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1280, in _retryable_write
+    return self._retry_with_session(retryable, func, s, None)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1226, in _retry_with_session
+    with self._get_socket(server) as sock_info:
+  File "C:\ProgramData\Anaconda3\lib\contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1094, in _get_socket
+    with server.get_socket(self.__all_credentials) as sock_info:
+  File "C:\ProgramData\Anaconda3\lib\contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1009, in get_socket
+    sock_info = self._get_socket_no_auth()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1046, in _get_socket_no_auth
+    sock_info = self.connect()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 977, in connect
+    _raise_connection_failure(self.address, error)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 283, in _raise_connection_failure
+    raise AutoReconnect(msg)
+pymongo.errors.AutoReconnect: localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+
+localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+2019-06-20 11:38:52,761 - WARNING - localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+2019-06-20 11:38:52,762 - INFO - The MongoDb is not running. Starting a new instance
+2019-06-20 11:38:52,762 - INFO - Starting MongoDb!
+2019-06-20 11:38:52,762 - ERROR - [WinError 6] The handle is invalid
+2019-06-20 11:38:52,899 - ERROR - Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1043, in _get_socket_no_auth
+    sock_info = self.sockets.popleft()
+IndexError: pop from an empty deque
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 973, in connect
+    sock = _configured_socket(self.address, self.opts)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 848, in _configured_socket
+    sock = _create_connection(address, options)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 829, in _create_connection
+    raise err
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 822, in _create_connection
+    sock.connect(sa)
+OSError: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ".\my_lib\mongo_db_manager\RTDB_mongo_driver.py", line 545, in insert_register
+    }, upsert=True)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\collection.py", line 1002, in update_one
+    session=session),
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\collection.py", line 858, in _update_retryable
+    _update, session)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1280, in _retryable_write
+    return self._retry_with_session(retryable, func, s, None)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1226, in _retry_with_session
+    with self._get_socket(server) as sock_info:
+  File "C:\ProgramData\Anaconda3\lib\contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1094, in _get_socket
+    with server.get_socket(self.__all_credentials) as sock_info:
+  File "C:\ProgramData\Anaconda3\lib\contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1009, in get_socket
+    sock_info = self._get_socket_no_auth()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1046, in _get_socket_no_auth
+    sock_info = self.connect()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 977, in connect
+    _raise_connection_failure(self.address, error)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 283, in _raise_connection_failure
+    raise AutoReconnect(msg)
+pymongo.errors.AutoReconnect: localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+
+localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+2019-06-20 11:38:53,272 - ERROR - localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permittedTraceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1043, in _get_socket_no_auth
+    sock_info = self.sockets.popleft()
+IndexError: pop from an empty deque
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 973, in connect
+    sock = _configured_socket(self.address, self.opts)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 848, in _configured_socket
+    sock = _create_connection(address, options)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 829, in _create_connection
+    raise err
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 822, in _create_connection
+    sock.connect(sa)
+OSError: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ".\my_lib\mongo_db_manager\RTDB_mongo_driver.py", line 175, in find_tag_point_by_name
+    result = collection.find_one({"tag_name": TagName})
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\collection.py", line 1269, in find_one
+    for result in cursor.limit(-1):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\cursor.py", line 1225, in next
+    if len(self.__data) or self._refresh():
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\cursor.py", line 1140, in _refresh
+    self.__send_message(q)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\cursor.py", line 954, in __send_message
+    operation, exhaust=self.__exhaust, address=self.__address)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1177, in _send_message_with_response
+    exhaust)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1188, in _reset_on_error
+    return func(*args, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\server.py", line 85, in send_message_with_response
+    with self.get_socket(all_credentials, exhaust) as sock_info:
+  File "C:\ProgramData\Anaconda3\lib\contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1009, in get_socket
+    sock_info = self._get_socket_no_auth()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1046, in _get_socket_no_auth
+    sock_info = self.connect()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 977, in connect
+    _raise_connection_failure(self.address, error)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 283, in _raise_connection_failure
+    raise AutoReconnect(msg)
+pymongo.errors.AutoReconnect: localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+
+2019-06-20 11:38:53,272 - WARNING - [SYSTEM.NUM-INSERTIONS]: Tag was not found
+2019-06-20 11:38:53,385 - ERROR - Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1043, in _get_socket_no_auth
+    sock_info = self.sockets.popleft()
+IndexError: pop from an empty deque
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 973, in connect
+    sock = _configured_socket(self.address, self.opts)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 848, in _configured_socket
+    sock = _create_connection(address, options)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 829, in _create_connection
+    raise err
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 822, in _create_connection
+    sock.connect(sa)
+OSError: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ".\my_lib\mongo_db_manager\RTDB_mongo_driver.py", line 545, in insert_register
+    }, upsert=True)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\collection.py", line 1002, in update_one
+    session=session),
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\collection.py", line 858, in _update_retryable
+    _update, session)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1280, in _retryable_write
+    return self._retry_with_session(retryable, func, s, None)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1226, in _retry_with_session
+    with self._get_socket(server) as sock_info:
+  File "C:\ProgramData\Anaconda3\lib\contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1094, in _get_socket
+    with server.get_socket(self.__all_credentials) as sock_info:
+  File "C:\ProgramData\Anaconda3\lib\contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1009, in get_socket
+    sock_info = self._get_socket_no_auth()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1046, in _get_socket_no_auth
+    sock_info = self.connect()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 977, in connect
+    _raise_connection_failure(self.address, error)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 283, in _raise_connection_failure
+    raise AutoReconnect(msg)
+pymongo.errors.AutoReconnect: localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+
+localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+2019-06-20 11:38:53,419 - ERROR - [SYSTEM.NUM-INSERTIONS] Unable to update
+
+Traceback (most recent call last):
+  File ".\my_lib\mongo_db_manager\RTDB_system.py", line 38, in register_insertions
+    assert(tag_point.tag_type is not None)
+AssertionError
+
+2019-06-20 11:38:53,432 - ERROR - Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1043, in _get_socket_no_auth
+    sock_info = self.sockets.popleft()
+IndexError: pop from an empty deque
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 973, in connect
+    sock = _configured_socket(self.address, self.opts)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 848, in _configured_socket
+    sock = _create_connection(address, options)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 829, in _create_connection
+    raise err
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 822, in _create_connection
+    sock.connect(sa)
+OSError: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ".\my_lib\mongo_db_manager\RTDB_mongo_driver.py", line 545, in insert_register
+    }, upsert=True)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\collection.py", line 1002, in update_one
+    session=session),
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\collection.py", line 858, in _update_retryable
+    _update, session)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1280, in _retryable_write
+    return self._retry_with_session(retryable, func, s, None)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1226, in _retry_with_session
+    with self._get_socket(server) as sock_info:
+  File "C:\ProgramData\Anaconda3\lib\contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1094, in _get_socket
+    with server.get_socket(self.__all_credentials) as sock_info:
+  File "C:\ProgramData\Anaconda3\lib\contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1009, in get_socket
+    sock_info = self._get_socket_no_auth()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1046, in _get_socket_no_auth
+    sock_info = self.connect()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 977, in connect
+    _raise_connection_failure(self.address, error)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 283, in _raise_connection_failure
+    raise AutoReconnect(msg)
+pymongo.errors.AutoReconnect: localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+
+localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+2019-06-20 11:38:53,774 - WARNING - [SYSTEM.NUM-INSERTIONS] This tag already exists, duplicated-tag warning
+E11000 duplicate key error collection: DB_FREDA.CATL|TAGS index: tag_name_1 dup key: { : "SYSTEM.NUM-INSERTIONS" }
+2019-06-20 11:38:53,958 - WARNING - localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+2019-06-20 11:38:53,958 - INFO - The MongoDb is not running. Starting a new instance
+2019-06-20 11:38:53,958 - INFO - Starting MongoDb!
+2019-06-20 11:38:53,959 - ERROR - [WinError 6] The handle is invalid
+2019-06-20 11:38:53,997 - ERROR - Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1043, in _get_socket_no_auth
+    sock_info = self.sockets.popleft()
+IndexError: pop from an empty deque
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 973, in connect
+    sock = _configured_socket(self.address, self.opts)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 848, in _configured_socket
+    sock = _create_connection(address, options)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 829, in _create_connection
+    raise err
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 822, in _create_connection
+    sock.connect(sa)
+OSError: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ".\my_lib\mongo_db_manager\RTDB_mongo_driver.py", line 545, in insert_register
+    }, upsert=True)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\collection.py", line 1002, in update_one
+    session=session),
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\collection.py", line 858, in _update_retryable
+    _update, session)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1280, in _retryable_write
+    return self._retry_with_session(retryable, func, s, None)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1226, in _retry_with_session
+    with self._get_socket(server) as sock_info:
+  File "C:\ProgramData\Anaconda3\lib\contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1094, in _get_socket
+    with server.get_socket(self.__all_credentials) as sock_info:
+  File "C:\ProgramData\Anaconda3\lib\contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1009, in get_socket
+    sock_info = self._get_socket_no_auth()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1046, in _get_socket_no_auth
+    sock_info = self.connect()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 977, in connect
+    _raise_connection_failure(self.address, error)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 283, in _raise_connection_failure
+    raise AutoReconnect(msg)
+pymongo.errors.AutoReconnect: localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+
+localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+2019-06-20 11:38:54,063 - ERROR - Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1043, in _get_socket_no_auth
+    sock_info = self.sockets.popleft()
+IndexError: pop from an empty deque
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 973, in connect
+    sock = _configured_socket(self.address, self.opts)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 848, in _configured_socket
+    sock = _create_connection(address, options)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 829, in _create_connection
+    raise err
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 822, in _create_connection
+    sock.connect(sa)
+OSError: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ".\my_lib\mongo_db_manager\RTDB_mongo_driver.py", line 545, in insert_register
+    }, upsert=True)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\collection.py", line 1002, in update_one
+    session=session),
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\collection.py", line 858, in _update_retryable
+    _update, session)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1280, in _retryable_write
+    return self._retry_with_session(retryable, func, s, None)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1226, in _retry_with_session
+    with self._get_socket(server) as sock_info:
+  File "C:\ProgramData\Anaconda3\lib\contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1094, in _get_socket
+    with server.get_socket(self.__all_credentials) as sock_info:
+  File "C:\ProgramData\Anaconda3\lib\contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1009, in get_socket
+    sock_info = self._get_socket_no_auth()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1046, in _get_socket_no_auth
+    sock_info = self.connect()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 977, in connect
+    _raise_connection_failure(self.address, error)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 283, in _raise_connection_failure
+    raise AutoReconnect(msg)
+pymongo.errors.AutoReconnect: localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+
+localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+2019-06-20 11:38:54,348 - WARNING - localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+2019-06-20 11:38:54,349 - INFO - The MongoDb is not running. Starting a new instance
+2019-06-20 11:38:54,349 - INFO - Starting MongoDb!
+2019-06-20 11:38:54,349 - ERROR - [WinError 6] The handle is invalid
+2019-06-20 11:38:54,527 - ERROR - Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1043, in _get_socket_no_auth
+    sock_info = self.sockets.popleft()
+IndexError: pop from an empty deque
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 973, in connect
+    sock = _configured_socket(self.address, self.opts)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 848, in _configured_socket
+    sock = _create_connection(address, options)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 829, in _create_connection
+    raise err
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 822, in _create_connection
+    sock.connect(sa)
+OSError: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ".\my_lib\mongo_db_manager\RTDB_mongo_driver.py", line 545, in insert_register
+    }, upsert=True)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\collection.py", line 1002, in update_one
+    session=session),
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\collection.py", line 858, in _update_retryable
+    _update, session)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1280, in _retryable_write
+    return self._retry_with_session(retryable, func, s, None)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1226, in _retry_with_session
+    with self._get_socket(server) as sock_info:
+  File "C:\ProgramData\Anaconda3\lib\contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1094, in _get_socket
+    with server.get_socket(self.__all_credentials) as sock_info:
+  File "C:\ProgramData\Anaconda3\lib\contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1009, in get_socket
+    sock_info = self._get_socket_no_auth()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1046, in _get_socket_no_auth
+    sock_info = self.connect()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 977, in connect
+    _raise_connection_failure(self.address, error)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 283, in _raise_connection_failure
+    raise AutoReconnect(msg)
+pymongo.errors.AutoReconnect: localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+
+localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+2019-06-20 11:38:54,849 - ERROR - localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permittedTraceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1043, in _get_socket_no_auth
+    sock_info = self.sockets.popleft()
+IndexError: pop from an empty deque
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 973, in connect
+    sock = _configured_socket(self.address, self.opts)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 848, in _configured_socket
+    sock = _create_connection(address, options)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 829, in _create_connection
+    raise err
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 822, in _create_connection
+    sock.connect(sa)
+OSError: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ".\my_lib\mongo_db_manager\RTDB_mongo_driver.py", line 175, in find_tag_point_by_name
+    result = collection.find_one({"tag_name": TagName})
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\collection.py", line 1269, in find_one
+    for result in cursor.limit(-1):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\cursor.py", line 1225, in next
+    if len(self.__data) or self._refresh():
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\cursor.py", line 1140, in _refresh
+    self.__send_message(q)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\cursor.py", line 954, in __send_message
+    operation, exhaust=self.__exhaust, address=self.__address)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1177, in _send_message_with_response
+    exhaust)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1188, in _reset_on_error
+    return func(*args, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\server.py", line 85, in send_message_with_response
+    with self.get_socket(all_credentials, exhaust) as sock_info:
+  File "C:\ProgramData\Anaconda3\lib\contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1009, in get_socket
+    sock_info = self._get_socket_no_auth()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1046, in _get_socket_no_auth
+    sock_info = self.connect()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 977, in connect
+    _raise_connection_failure(self.address, error)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 283, in _raise_connection_failure
+    raise AutoReconnect(msg)
+pymongo.errors.AutoReconnect: localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+
+2019-06-20 11:38:54,849 - WARNING - [DNP-EEQSA_PERLCIPAL-37466#Vln a]: Tag was not found
+2019-06-20 11:38:55,022 - ERROR - Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1043, in _get_socket_no_auth
+    sock_info = self.sockets.popleft()
+IndexError: pop from an empty deque
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 973, in connect
+    sock = _configured_socket(self.address, self.opts)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 848, in _configured_socket
+    sock = _create_connection(address, options)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 829, in _create_connection
+    raise err
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 822, in _create_connection
+    sock.connect(sa)
+OSError: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ".\my_lib\mongo_db_manager\RTDB_mongo_driver.py", line 545, in insert_register
+    }, upsert=True)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\collection.py", line 1002, in update_one
+    session=session),
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\collection.py", line 858, in _update_retryable
+    _update, session)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1280, in _retryable_write
+    return self._retry_with_session(retryable, func, s, None)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1226, in _retry_with_session
+    with self._get_socket(server) as sock_info:
+  File "C:\ProgramData\Anaconda3\lib\contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1094, in _get_socket
+    with server.get_socket(self.__all_credentials) as sock_info:
+  File "C:\ProgramData\Anaconda3\lib\contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1009, in get_socket
+    sock_info = self._get_socket_no_auth()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1046, in _get_socket_no_auth
+    sock_info = self.connect()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 977, in connect
+    _raise_connection_failure(self.address, error)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 283, in _raise_connection_failure
+    raise AutoReconnect(msg)
+pymongo.errors.AutoReconnect: localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+
+localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+2019-06-20 11:38:55,117 - ERROR - Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1043, in _get_socket_no_auth
+    sock_info = self.sockets.popleft()
+IndexError: pop from an empty deque
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 973, in connect
+    sock = _configured_socket(self.address, self.opts)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 848, in _configured_socket
+    sock = _create_connection(address, options)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 829, in _create_connection
+    raise err
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 822, in _create_connection
+    sock.connect(sa)
+OSError: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ".\my_lib\mongo_db_manager\RTDB_mongo_driver.py", line 545, in insert_register
+    }, upsert=True)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\collection.py", line 1002, in update_one
+    session=session),
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\collection.py", line 858, in _update_retryable
+    _update, session)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1280, in _retryable_write
+    return self._retry_with_session(retryable, func, s, None)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1226, in _retry_with_session
+    with self._get_socket(server) as sock_info:
+  File "C:\ProgramData\Anaconda3\lib\contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1094, in _get_socket
+    with server.get_socket(self.__all_credentials) as sock_info:
+  File "C:\ProgramData\Anaconda3\lib\contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1009, in get_socket
+    sock_info = self._get_socket_no_auth()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1046, in _get_socket_no_auth
+    sock_info = self.connect()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 977, in connect
+    _raise_connection_failure(self.address, error)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 283, in _raise_connection_failure
+    raise AutoReconnect(msg)
+pymongo.errors.AutoReconnect: localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+
+localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+2019-06-20 11:38:56,127 - ERROR - Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1043, in _get_socket_no_auth
+    sock_info = self.sockets.popleft()
+IndexError: pop from an empty deque
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 973, in connect
+    sock = _configured_socket(self.address, self.opts)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 848, in _configured_socket
+    sock = _create_connection(address, options)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 829, in _create_connection
+    raise err
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 822, in _create_connection
+    sock.connect(sa)
+OSError: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ".\my_lib\mongo_db_manager\RTDB_mongo_driver.py", line 545, in insert_register
+    }, upsert=True)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\collection.py", line 1002, in update_one
+    session=session),
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\collection.py", line 858, in _update_retryable
+    _update, session)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1280, in _retryable_write
+    return self._retry_with_session(retryable, func, s, None)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1226, in _retry_with_session
+    with self._get_socket(server) as sock_info:
+  File "C:\ProgramData\Anaconda3\lib\contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1094, in _get_socket
+    with server.get_socket(self.__all_credentials) as sock_info:
+  File "C:\ProgramData\Anaconda3\lib\contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1009, in get_socket
+    sock_info = self._get_socket_no_auth()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1046, in _get_socket_no_auth
+    sock_info = self.connect()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 977, in connect
+    _raise_connection_failure(self.address, error)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 283, in _raise_connection_failure
+    raise AutoReconnect(msg)
+pymongo.errors.AutoReconnect: localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+
+localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+2019-06-20 11:38:56,187 - WARNING - localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+2019-06-20 11:38:56,187 - INFO - The MongoDb is not running. Starting a new instance
+2019-06-20 11:38:56,187 - INFO - Starting MongoDb!
+2019-06-20 11:38:56,188 - ERROR - [WinError 6] The handle is invalid
+2019-06-20 11:38:56,433 - ERROR - Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1043, in _get_socket_no_auth
+    sock_info = self.sockets.popleft()
+IndexError: pop from an empty deque
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 973, in connect
+    sock = _configured_socket(self.address, self.opts)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 848, in _configured_socket
+    sock = _create_connection(address, options)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 829, in _create_connection
+    raise err
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 822, in _create_connection
+    sock.connect(sa)
+OSError: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ".\my_lib\mongo_db_manager\RTDB_mongo_driver.py", line 545, in insert_register
+    }, upsert=True)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\collection.py", line 1002, in update_one
+    session=session),
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\collection.py", line 858, in _update_retryable
+    _update, session)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1280, in _retryable_write
+    return self._retry_with_session(retryable, func, s, None)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1226, in _retry_with_session
+    with self._get_socket(server) as sock_info:
+  File "C:\ProgramData\Anaconda3\lib\contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1094, in _get_socket
+    with server.get_socket(self.__all_credentials) as sock_info:
+  File "C:\ProgramData\Anaconda3\lib\contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1009, in get_socket
+    sock_info = self._get_socket_no_auth()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1046, in _get_socket_no_auth
+    sock_info = self.connect()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 977, in connect
+    _raise_connection_failure(self.address, error)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 283, in _raise_connection_failure
+    raise AutoReconnect(msg)
+pymongo.errors.AutoReconnect: localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+
+localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+2019-06-20 11:38:56,683 - ERROR - localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permittedTraceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1043, in _get_socket_no_auth
+    sock_info = self.sockets.popleft()
+IndexError: pop from an empty deque
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 973, in connect
+    sock = _configured_socket(self.address, self.opts)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 848, in _configured_socket
+    sock = _create_connection(address, options)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 829, in _create_connection
+    raise err
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 822, in _create_connection
+    sock.connect(sa)
+OSError: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ".\my_lib\mongo_db_manager\RTDB_mongo_driver.py", line 175, in find_tag_point_by_name
+    result = collection.find_one({"tag_name": TagName})
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\collection.py", line 1269, in find_one
+    for result in cursor.limit(-1):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\cursor.py", line 1225, in next
+    if len(self.__data) or self._refresh():
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\cursor.py", line 1140, in _refresh
+    self.__send_message(q)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\cursor.py", line 954, in __send_message
+    operation, exhaust=self.__exhaust, address=self.__address)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1177, in _send_message_with_response
+    exhaust)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1188, in _reset_on_error
+    return func(*args, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\server.py", line 85, in send_message_with_response
+    with self.get_socket(all_credentials, exhaust) as sock_info:
+  File "C:\ProgramData\Anaconda3\lib\contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1009, in get_socket
+    sock_info = self._get_socket_no_auth()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1046, in _get_socket_no_auth
+    sock_info = self.connect()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 977, in connect
+    _raise_connection_failure(self.address, error)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 283, in _raise_connection_failure
+    raise AutoReconnect(msg)
+pymongo.errors.AutoReconnect: localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+
+2019-06-20 11:38:56,683 - WARNING - [SYSTEM.NUM-INSERTIONS]: Tag was not found
+2019-06-20 11:38:56,684 - ERROR - [SYSTEM.NUM-INSERTIONS] Unable to update
+
+Traceback (most recent call last):
+  File ".\my_lib\mongo_db_manager\RTDB_system.py", line 38, in register_insertions
+    assert(tag_point.tag_type is not None)
+AssertionError
+
+2019-06-20 11:38:57,147 - ERROR - Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1043, in _get_socket_no_auth
+    sock_info = self.sockets.popleft()
+IndexError: pop from an empty deque
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 973, in connect
+    sock = _configured_socket(self.address, self.opts)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 848, in _configured_socket
+    sock = _create_connection(address, options)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 829, in _create_connection
+    raise err
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 822, in _create_connection
+    sock.connect(sa)
+OSError: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ".\my_lib\mongo_db_manager\RTDB_mongo_driver.py", line 545, in insert_register
+    }, upsert=True)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\collection.py", line 1002, in update_one
+    session=session),
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\collection.py", line 858, in _update_retryable
+    _update, session)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1280, in _retryable_write
+    return self._retry_with_session(retryable, func, s, None)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1226, in _retry_with_session
+    with self._get_socket(server) as sock_info:
+  File "C:\ProgramData\Anaconda3\lib\contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1094, in _get_socket
+    with server.get_socket(self.__all_credentials) as sock_info:
+  File "C:\ProgramData\Anaconda3\lib\contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1009, in get_socket
+    sock_info = self._get_socket_no_auth()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1046, in _get_socket_no_auth
+    sock_info = self.connect()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 977, in connect
+    _raise_connection_failure(self.address, error)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 283, in _raise_connection_failure
+    raise AutoReconnect(msg)
+pymongo.errors.AutoReconnect: localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+
+localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+2019-06-20 11:38:57,183 - ERROR - Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1043, in _get_socket_no_auth
+    sock_info = self.sockets.popleft()
+IndexError: pop from an empty deque
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 973, in connect
+    sock = _configured_socket(self.address, self.opts)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 848, in _configured_socket
+    sock = _create_connection(address, options)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 829, in _create_connection
+    raise err
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 822, in _create_connection
+    sock.connect(sa)
+OSError: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ".\my_lib\mongo_db_manager\RTDB_mongo_driver.py", line 545, in insert_register
+    }, upsert=True)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\collection.py", line 1002, in update_one
+    session=session),
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\collection.py", line 858, in _update_retryable
+    _update, session)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1280, in _retryable_write
+    return self._retry_with_session(retryable, func, s, None)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1226, in _retry_with_session
+    with self._get_socket(server) as sock_info:
+  File "C:\ProgramData\Anaconda3\lib\contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1094, in _get_socket
+    with server.get_socket(self.__all_credentials) as sock_info:
+  File "C:\ProgramData\Anaconda3\lib\contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1009, in get_socket
+    sock_info = self._get_socket_no_auth()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1046, in _get_socket_no_auth
+    sock_info = self.connect()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 977, in connect
+    _raise_connection_failure(self.address, error)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 283, in _raise_connection_failure
+    raise AutoReconnect(msg)
+pymongo.errors.AutoReconnect: localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+
+localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+2019-06-20 11:38:57,194 - WARNING - [SYSTEM.NUM-INSERTIONS] This tag already exists, duplicated-tag warning
+E11000 duplicate key error collection: DB_FREDA.CATL|TAGS index: tag_name_1 dup key: { : "SYSTEM.NUM-INSERTIONS" }
+2019-06-20 11:38:57,248 - ERROR - Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1043, in _get_socket_no_auth
+    sock_info = self.sockets.popleft()
+IndexError: pop from an empty deque
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 973, in connect
+    sock = _configured_socket(self.address, self.opts)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 848, in _configured_socket
+    sock = _create_connection(address, options)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 829, in _create_connection
+    raise err
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 822, in _create_connection
+    sock.connect(sa)
+OSError: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ".\my_lib\mongo_db_manager\RTDB_mongo_driver.py", line 545, in insert_register
+    }, upsert=True)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\collection.py", line 1002, in update_one
+    session=session),
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\collection.py", line 858, in _update_retryable
+    _update, session)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1280, in _retryable_write
+    return self._retry_with_session(retryable, func, s, None)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1226, in _retry_with_session
+    with self._get_socket(server) as sock_info:
+  File "C:\ProgramData\Anaconda3\lib\contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1094, in _get_socket
+    with server.get_socket(self.__all_credentials) as sock_info:
+  File "C:\ProgramData\Anaconda3\lib\contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1009, in get_socket
+    sock_info = self._get_socket_no_auth()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1046, in _get_socket_no_auth
+    sock_info = self.connect()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 977, in connect
+    _raise_connection_failure(self.address, error)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 283, in _raise_connection_failure
+    raise AutoReconnect(msg)
+pymongo.errors.AutoReconnect: localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+
+localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+2019-06-20 11:38:57,473 - ERROR - Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1043, in _get_socket_no_auth
+    sock_info = self.sockets.popleft()
+IndexError: pop from an empty deque
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 973, in connect
+    sock = _configured_socket(self.address, self.opts)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 848, in _configured_socket
+    sock = _create_connection(address, options)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 829, in _create_connection
+    raise err
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 822, in _create_connection
+    sock.connect(sa)
+OSError: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ".\my_lib\mongo_db_manager\RTDB_mongo_driver.py", line 545, in insert_register
+    }, upsert=True)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\collection.py", line 1002, in update_one
+    session=session),
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\collection.py", line 858, in _update_retryable
+    _update, session)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1280, in _retryable_write
+    return self._retry_with_session(retryable, func, s, None)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1226, in _retry_with_session
+    with self._get_socket(server) as sock_info:
+  File "C:\ProgramData\Anaconda3\lib\contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1094, in _get_socket
+    with server.get_socket(self.__all_credentials) as sock_info:
+  File "C:\ProgramData\Anaconda3\lib\contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1009, in get_socket
+    sock_info = self._get_socket_no_auth()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1046, in _get_socket_no_auth
+    sock_info = self.connect()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 977, in connect
+    _raise_connection_failure(self.address, error)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 283, in _raise_connection_failure
+    raise AutoReconnect(msg)
+pymongo.errors.AutoReconnect: localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+
+localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+2019-06-20 11:38:57,824 - ERROR - Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1043, in _get_socket_no_auth
+    sock_info = self.sockets.popleft()
+IndexError: pop from an empty deque
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 973, in connect
+    sock = _configured_socket(self.address, self.opts)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 848, in _configured_socket
+    sock = _create_connection(address, options)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 829, in _create_connection
+    raise err
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 822, in _create_connection
+    sock.connect(sa)
+OSError: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ".\my_lib\mongo_db_manager\RTDB_mongo_driver.py", line 545, in insert_register
+    }, upsert=True)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\collection.py", line 1002, in update_one
+    session=session),
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\collection.py", line 858, in _update_retryable
+    _update, session)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1280, in _retryable_write
+    return self._retry_with_session(retryable, func, s, None)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1226, in _retry_with_session
+    with self._get_socket(server) as sock_info:
+  File "C:\ProgramData\Anaconda3\lib\contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1094, in _get_socket
+    with server.get_socket(self.__all_credentials) as sock_info:
+  File "C:\ProgramData\Anaconda3\lib\contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1009, in get_socket
+    sock_info = self._get_socket_no_auth()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1046, in _get_socket_no_auth
+    sock_info = self.connect()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 977, in connect
+    _raise_connection_failure(self.address, error)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 283, in _raise_connection_failure
+    raise AutoReconnect(msg)
+pymongo.errors.AutoReconnect: localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+
+localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+2019-06-20 11:38:58,248 - WARNING - localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+2019-06-20 11:38:58,249 - INFO - The MongoDb is not running. Starting a new instance
+2019-06-20 11:38:58,249 - INFO - Starting MongoDb!
+2019-06-20 11:38:58,250 - ERROR - [WinError 6] The handle is invalid
+2019-06-20 11:38:58,750 - ERROR - localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permittedTraceback (most recent call last):
+  File ".\my_lib\mongo_db_manager\RTDB_system.py", line 38, in register_insertions
+    assert(tag_point.tag_type is not None)
+AssertionError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1043, in _get_socket_no_auth
+    sock_info = self.sockets.popleft()
+IndexError: pop from an empty deque
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 973, in connect
+    sock = _configured_socket(self.address, self.opts)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 848, in _configured_socket
+    sock = _create_connection(address, options)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 829, in _create_connection
+    raise err
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 822, in _create_connection
+    sock.connect(sa)
+OSError: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ".\my_lib\mongo_db_manager\RTDB_mongo_driver.py", line 175, in find_tag_point_by_name
+    result = collection.find_one({"tag_name": TagName})
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\collection.py", line 1269, in find_one
+    for result in cursor.limit(-1):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\cursor.py", line 1225, in next
+    if len(self.__data) or self._refresh():
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\cursor.py", line 1140, in _refresh
+    self.__send_message(q)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\cursor.py", line 954, in __send_message
+    operation, exhaust=self.__exhaust, address=self.__address)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1177, in _send_message_with_response
+    exhaust)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1188, in _reset_on_error
+    return func(*args, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\server.py", line 85, in send_message_with_response
+    with self.get_socket(all_credentials, exhaust) as sock_info:
+  File "C:\ProgramData\Anaconda3\lib\contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1009, in get_socket
+    sock_info = self._get_socket_no_auth()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 1046, in _get_socket_no_auth
+    sock_info = self.connect()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 977, in connect
+    _raise_connection_failure(self.address, error)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\pymongo\pool.py", line 283, in _raise_connection_failure
+    raise AutoReconnect(msg)
+pymongo.errors.AutoReconnect: localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+
+2019-06-20 11:38:58,750 - WARNING - [SYSTEM.NUM-INSERTIONS]: Tag was not found
+2019-06-20 11:38:58,751 - ERROR - [SYSTEM.NUM-INSERTIONS] Unable to update
+
+Traceback (most recent call last):
+  File ".\my_lib\mongo_db_manager\RTDB_system.py", line 38, in register_insertions
+    assert(tag_point.tag_type is not None)
+AssertionError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ".\my_lib\mongo_db_manager\RTDB_system.py", line 38, in register_insertions
+    assert(tag_point.tag_type is not None)
+AssertionError
+
+2019-06-20 11:38:59,241 - ERROR - localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+2019-06-20 11:39:05,679 - WARNING - localhost:2717: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
