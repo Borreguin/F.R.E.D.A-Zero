@@ -45,7 +45,13 @@ range_time_with_span.add_argument("span", type=str, help="./help/span",
 """ arguments for interpolated values with method """
 range_time_with_span_and_method = range_time_with_span.copy()
 range_time_with_span_and_method.add_argument("method", type=str, help="./help/interpolated/method",
-                                             required=False, default="time")
+                                             required=False, default="time", choices=["linear", "time", "index",
+                                                                                      "values", "pad", "nearest",
+                                                                                      "zero", "slinear", "quadratic",
+                                                                                      "cubic", "spline", "barycentric",
+                                                                                      "polynomial", "krogh",
+                                                                                      "from_derivatives"])
+
 
 """ arguments for registers service """
 tag_list = reqparse.RequestParser()

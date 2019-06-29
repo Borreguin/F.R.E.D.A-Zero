@@ -110,22 +110,47 @@ class RTDAcquisitionSource(abc.ABC):
         pass
 
     @staticmethod
-    def find_tag_point_by_name(self, TagName:str):
+    def find_tag_point_by_name(self, TagName: str):
+        """
+        Find a tagPoint by name
+
+        :param TagName: tagPoint name (unique)
+        :return: tagPoint
+        """
+        pass
+
+    @staticmethod
+    def find_tag_group_by_name(self, group_name: str):
         """
         Define Span object
 
-        :param delta_time: ex: "30m"
-        :return: span time variable
+        :param group_name: name of a group of tagPoints (unique)
+        :return: GroupPoint
         """
         pass
 
     @abc.abstractmethod
-    def create_tag_point(self, tag_name: str, tag_type: str):
+    def create_tag_point(self, tag_name: str, tag_type: str, attributes: dict):
         """
         Create a Tag point using: "tag_name" and "tag_type" in "container" data base
 
+        :param attributes:  Additional information about this tagPoint
         :param tag_name: Unique name to identify a stored time series
         :param tag_type: i.e: analogs, status, events, profiles, etc. (the collection where tag is going to be stored)
+
+        :return:
+        """
+
+    @abc.abstractmethod
+    def create_tag_group(self, group_name: str, group_type: str, tag_list: list, attributes: dict):
+        """
+        Create a Tag point using: "tag_name" and "tag_type" in "container" data base
+
+        :param tag_list: List of tag_names
+        :param group_type: Group type description
+        :param attributes:
+        :param group_name: Unique name to identify a stored time series
+        :param description: Additional information about this group
 
         :return:
         """
@@ -143,11 +168,28 @@ class RTDAcquisitionSource(abc.ABC):
         """
 
     @abc.abstractmethod
+    def delete_group_point(self, group_name: str, group_type: str):
+        """
+        Deletes a group point using: "group_name" in "container" data base.
+        :param group_name: name of the group
+        :param group_type:  type of the group for identification purposes. Ex: device, position, area, etc.
+        :return:
+        """
+
+    @abc.abstractmethod
     def update_tag_name(self, tag_name: str, new_tag_name: str):
         """
-        Updates the nanme of a TagPoint
+        Updates the name of a TagPoint
         :param tag_name: old tag name
         :param new_tag_name: new tag name
+        :return:
+        """
+
+    def update_tag_type(self, tag_name: str, new_tag_type: str):
+        """
+        Updates the tag_type of a TagPoint
+        :param tag_name: tag name
+        :param new_tag_type: new tag name
         :return:
         """
 
@@ -156,6 +198,7 @@ class RTDAcquisitionSource(abc.ABC):
         Return a list of TagPoints in the historian
         :return:
         """
+
 
 class RTDATagPoint(abc.ABC):
     """
@@ -166,7 +209,6 @@ class RTDATagPoint(abc.ABC):
     tag_type = None
     tag_name = None
     log = None
-
 
     @abc.abstractmethod
     def interpolated(self, time_range, span, as_df=True, numeric=True):
@@ -295,4 +337,22 @@ class RTDATagPoint(abc.ABC):
         pass
 
 
+class RTDAGroupPoint(abc.ABC):
+    """
+        Class that defines a group of tags
+    """
+    container = None
+    group_name = None
+    group_id = None
+    group_type = None
+    list_id = list()
+    update = dt.datetime.now()
+    log = None
 
+    @abc.abstractmethod
+    def current_value(self, by_tag_type: str=None):
+        """
+        Gets the last value of a measurement/state
+        :return:
+        """
+        pass

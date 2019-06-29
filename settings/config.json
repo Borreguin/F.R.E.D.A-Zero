@@ -28,6 +28,7 @@
   "DB_NAME" : "DB_FREDA",
   "DB_TIME_SERIES": "DB_TIME_SERIES",
   "CL_TAG_LIST": "CATL|TAGS",
+  "CL_GROUP_LIST": "CATL|GROUPS",
   "CL_LAST_VALUES": "SUMM|LAST_VALUES",
 
   "SUPPORTED_FORMAT_DATES": ["%Y-%m-%d %H:%M:%S", "%Y-%m-%d %H:%M", "%Y-%m-%d", "%Y-%m-%d %H:%M:%S.%f"],
