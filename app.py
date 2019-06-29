@@ -19,7 +19,7 @@ from api.restplus import api as api_p
 # from api.database import db
 
 # namespaces:
-# from api.blog.endpoints.posts import ns as blog_posts_namespace
+# from api.blog-example.endpoints.posts import ns as blog_posts_namespace
 from api.historian.endpoints.api_admin_services import ns as historian_namespace_admin
 from api.historian.endpoints.api_single_services import ns as historian_namespace_single
 from api.historian.endpoints.api_list_services import ns as historian_namespace_list

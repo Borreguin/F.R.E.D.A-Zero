@@ -64,6 +64,7 @@ if os.name == "posix":
 DB_MONGO_NAME = cfg_json["DB_NAME"]
 DB_TIME_SERIES = cfg_json["DB_TIME_SERIES"]
 CL_TAG_LIST = cfg_json["CL_TAG_LIST"]
+CL_GROUP_LIST = cfg_json["CL_GROUP_LIST"]
 CL_LAST_VALUES = cfg_json["CL_LAST_VALUES"]
 
 """ SUPPORTED DATES """

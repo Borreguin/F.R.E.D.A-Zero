@@ -30,6 +30,7 @@ log = init.LogDefaultConfig("web_service.log").logger
 # from api.historian.parsers import test_arguments
 from api.historian import parsers as arg_from
 from api.historian import serializers as ser_from
+from api.historian.endpoints import api_functions as api_f
 from my_lib.mongo_db_manager import RTDB_system as sys_h
 
 ns = api.namespace('admin', description='Historian admin operations')
@@ -112,9 +113,55 @@ class Tag(Resource):
             return None, 400
 
 
+@ns.route('/group')
+class Group(Resource):
+    @api.response(400, 'Unable to create a new GroupPoint')
+    @api.expect(ser_from.group)
+    def post(self):
+        """
+        Creates a new group of TagPoints
+        TagNames in {tag_list} must exist to be part of the group, otherwise it will be not included.
+        """
+        request_data = request.json
+        group_name = request_data.pop("group_name")
+        cntr = dr.RTContainer()
+        try:
+            request_data, group_type = api_f.pop_value(request_data, "group_type")
+            request_data, tag_list = api_f.pop_value(request_data, "tag_list")
+            request_data, attributes = api_f.pop_value(request_data, "attributes")
+            success, result = cntr.create_tag_group(group_name, group_type, tag_list, attributes)
+            cntr.close()
+            return dict(success=success, result=result)
+        except Exception as e:
+            cntr.log.error("Unable to create a GroupPoint \n" + str(e))
+            cntr.close()
+            return None, 400
+
+    @api.response(400, 'Unable to delete a GroupPoint')
+    @api.expect(ser_from.group_delete)
+    def delete(self):
+        """
+        Deletes a GroupPoint
+        For security reasons the {group_type} should match, otherwise the GroupPoint cannot be deleted
+        """
+        request_data = request.json
+        cntr = dr.RTContainer()
+        try:
+            group_name = request_data["group_name"]
+            group_type = request_data["group_type"]
+            success, result = cntr.delete_group_point(group_name, group_type)
+            cntr.close()
+            return dict(success=success, result=result)
+        except Exception as e:
+            log.error(str(e))
+            cntr.log.error("Unable to delete a TagPoint \n")
+            cntr.close()
+            return None, 400
+
+
 @ns.route('/tags')
 @ns.route('/tags/<string:filter_exp>')
-class NewUpdateTag(Resource):
+class FindTagFilter(Resource):
 
     def get(self, filter_exp=None):
         """
@@ -125,4 +172,17 @@ class NewUpdateTag(Resource):
         success, result = cntr.find_all_tags(filter_exp)
         return dict(success=success, result=result)
 
+
+@ns.route('/groups')
+@ns.route('/groups/<string:filter_exp>')
+class FindGroupFilter(Resource):
+
+    def get(self, filter_exp=None):
+        """
+        Returns all existing groupPoints
+        filter_exp: Expression for filter groupPoints. * can be used as wildcard
+        """
+        cntr = dr.RTContainer()
+        success, result = cntr.find_all_groups(filter_exp)
+        return dict(success=success, result=result)
 

@@ -94,6 +94,13 @@ def validate_method(method: str=None):
         return False, None
 
 
+def pop_value(dictionary: dict, key: str):
+    value = None
+    if key in dictionary.keys():
+        value = dictionary.pop(key)
+    return dictionary, value
+
+
 freq_options = pd.DataFrame(columns=["Alias", "Description"],
                             data=[
     ["B", "business day frequency"],

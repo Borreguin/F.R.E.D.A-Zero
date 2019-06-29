@@ -2,6 +2,7 @@
 import pymongo
 from my_lib.RTDB.RTDA_BaseClass import RTDAcquisitionSource
 from my_lib.RTDB.RTDA_BaseClass import RTDATagPoint
+from my_lib.RTDB.RTDA_BaseClass import RTDAGroupPoint
 from my_lib.mongo_db_manager import RTDBClasses as h
 import settings.initial_settings as init
 
@@ -17,10 +18,12 @@ from my_lib.mongo_db_manager import RTDB_system as sys_h
 
 DBTimeSeries = init.DB_MONGO_NAME
 CollectionTagList = init.CL_TAG_LIST
+CollectionGroupList = init.CL_GROUP_LIST
 CollectionLastValues = init.CL_LAST_VALUES
 
 
 class RTContainer(RTDAcquisitionSource):
+
     def __init__(self, mongo_client_settings: dict = None, logger: logging.Logger=None):
         """
         Sets the Mongo DB container
@@ -193,6 +196,21 @@ class RTContainer(RTDAcquisitionSource):
             self.log.error(str(e) + str(tb))
             return False, str(e)
 
+    def find_tag_group_by_name(self, group_name: str):
+        group_name = group_name.upper().strip()
+        try:
+            db = self.container[DBTimeSeries]
+            collection = db[CollectionGroupList]
+            result = collection.find_one({"group_name": group_name})
+            if result is None:
+                return False, result
+            else:
+                return True, result
+        except Exception as e:
+            tb = traceback.format_exc()
+            self.log.error(str(e) + str(tb))
+            return False, str(e)
+
     def update_tag_name(self, tag_name:str, new_tag_name:str):
 
         tag_name = tag_name.upper().strip()
@@ -239,9 +257,33 @@ class RTContainer(RTDAcquisitionSource):
 
             return True, df.to_dict(orient="records")
         except Exception as e:
-            return False, list()
+            return False, dict()
 
-    def create_tag_point(self, tag_name: str, tag_type: str="generic"):
+    def find_all_groups(self, filter_exp: str=None):
+        try:
+            db = self.container[DBTimeSeries]
+            collection = db[CollectionGroupList]
+
+            if filter_exp is not None:
+                filter_exp = filter_exp.replace("*", ".*")
+                rgx = re.compile(filter_exp, re.IGNORECASE)  # compile the regex
+                result = collection.find({"group_name": rgx}, projection={'_id': False})
+            else:
+                result = collection.find(projection={'_id': False})
+
+            to_send = list()
+            for d in result:
+                to_send.append(d)
+            df = pd.DataFrame(to_send).sort_values(by=["group_name"])
+
+            return True, df.to_dict(orient="records")
+        except KeyError:
+            return False, "There is not groupPoint that matches with this filter expression> {0}".format(filter_exp)
+
+    def create_tag_point(self, tag_name: str, tag_type: str="generic", attributes: dict=None):
+
+        if tag_type is None:
+            tag_type="generic"
 
         success, tag_name, tag_type = self.validate_name(tag_name, tag_type)
         if not success:
@@ -258,10 +300,12 @@ class RTContainer(RTDAcquisitionSource):
             cl_last_value.create_index("tag_id", unique=True)
 
         tagPoint = {"tag_name": tag_name, "tag_type": tag_type}
+        if attributes is not None:
+            tagPoint["attributes"] = attributes
 
         try:
             result = cl_tag_list.insert_one(tagPoint)
-            msg = "[{0}] was created successfully".format(tag_name)
+            msg = "[{0}] was successfully created".format(tag_name)
             self.log.info(msg)
             inserted_id = str(tagPoint["_id"])
             cl_tag_list.update_one(tagPoint, {"$set": {"tag_id": inserted_id }}, upsert=True)
@@ -271,13 +315,58 @@ class RTContainer(RTDAcquisitionSource):
             self.log.warning(msg + "\n" + str(e))
             return False, msg
 
-    def validate_name(self, tag_name: str, tag_type:str ):
+    def create_tag_group(self, group_name: str, group_type: str, tag_list: list, attributes: dict=None):
+
+        success, group_name, group_type = self.validate_name(group_name, group_type, tsl_prefix=False)
+        if not success:
+            msg = "{0} is an incorrect name".format(group_name)
+            self.log.warning(msg)
+            return False, msg
+
+        db = self.container[DBTimeSeries]
+        cl_group_list = db[CollectionGroupList]
+
+        if cl_group_list.count() == 0:
+            cl_group_list.create_index("group_name", unique=True)
+
+        group_point = {"group_name": group_name, "group_type": group_type}
+        if attributes is not None:
+            group_point["attributes"] = attributes
+
+        if not isinstance(tag_list, list):
+            msg = "@tag_list is not a list of tag_names, check: " + str(tag_list)
+            self.log.warning(msg)
+            return False, msg
+
+        try:
+            id_dict, tag_dict, found, not_found = self.get_dicts_for_tag_list(tag_list)
+            tag_id_list = [tag_dict[tag] for tag in found]
+            group_point["tag_id_list"] = tag_id_list
+
+            # insert in collection of groups
+            cl_group_list.insert_one(group_point)
+            msg = "[{0}] was successfully created".format(group_name)
+            warning = ""
+            if len(not_found) > 0:
+                warning= "{0} tag(s) were not found. Check the <not_found> value".format(len(not_found))
+            self.log.info(msg)
+            inserted_id = str(group_point["_id"])
+            cl_group_list.update_one(group_point, {"$set": {"group_id": inserted_id}}, upsert=True)
+            return True, dict(msg=msg, found=found, not_found=not_found, warning=warning)
+
+        except Exception as e:
+            msg = "[{0}] This group already exists, duplicated-group warning. Use other name".format(group_name)
+            self.log.warning(msg + "\n" + str(e))
+            return False, msg
+
+    @staticmethod
+    def validate_name(tag_name: str, tag_type: str, tsl_prefix=True):
         tag_name = tag_name.upper().strip()
         tag_type = tag_type.upper().strip()
 
         if len(tag_type) <= 0:
             tag_type = "generic"
-        if "|" not in tag_type:
+        if "|" not in tag_type and tsl_prefix:
             tag_type = "TSCL|" + tag_type
         if "$" in tag_type:
             tag_type.replace("$", "*")
@@ -325,6 +414,39 @@ class RTContainer(RTDAcquisitionSource):
         else:
             return False, msg
 
+    def delete_group_point(self, group_name: str, group_type: str):
+        group_point = GroupPoint(self, group_name, self.log)
+        group_type = group_type.strip().upper()
+
+        msg = ""
+        if group_point.group_type is None:
+            msg = "[{0}] does not exists in the historian ".format(group_name)
+        elif group_type not in group_point.group_type:
+            msg += "[{0}] tagType does not match with [{1}]".format(group_type, TagPoint.tag_type)
+
+        if len(msg) > 0:
+            self.log.warning(msg)
+            return False, msg
+
+        collections_where_delete = [CollectionGroupList]
+        msg = ""
+        for collection in collections_where_delete:
+            try:
+                db = self.container[DBTimeSeries]
+                filter_dict = dict(tag_id=group_point.group_id)
+                cl = db[collection]
+                cl.delete_many(filter_dict)
+            except Exception as e:
+                msg += "Unable to delete group point {0} in collection {1}".\
+                    format(group_name, collection)
+                self.log.error(msg + "\n" + str(e))
+
+        if len(msg) == 0:
+            msg = "Group point {0} was deleted".format(group_name)
+            self.log.info(msg)
+            return True, msg
+        else:
+            return False, msg
 
     def close(self):
         self.container.close()
@@ -447,7 +569,6 @@ class TagPoint(RTDATagPoint):
             tb = traceback.format_exc()
             self.log.error(str(e) + "\n" + str(tb))
             return pd.DataFrame()
-
 
     def summaries(self, time_range, span, summary_type_list, calculation_type, timestamp_calculation):
         pass
@@ -691,4 +812,25 @@ class TagPoint(RTDATagPoint):
                     tag_name=self.tag_name)
 
 
+class GroupPoint(RTDAGroupPoint):
 
+    def __init__(self,  container: RTContainer, group_name: str, logger: logging.Logger=None) -> None:
+        self.container = container
+        self.group_name = group_name.upper()
+        if logger is None:
+            logger = init.LogDefaultConfig().logger
+        self.log = logger
+
+        success, search = container.find_tag_group_by_name(group_name)
+        if success and isinstance(search, dict):
+            self._id = str(search["_id"])
+            self.group_id = str(search["group_id"])
+            self.group_type = search["group_type"]
+            self.log.debug("[{0}] Group was found".format(group_name))
+
+        else:
+            self.log.warning("[{0}]: Group was not found".format(group_name))
+            print("There is not Group called: " + self.group_name)
+
+    def current_value(self, by_tag_type: str = None):
+        pass
