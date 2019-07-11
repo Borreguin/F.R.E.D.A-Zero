@@ -12,24 +12,30 @@
 
 
 import numpy as np
-from matplotlib import cm, pyplot as plt, style as st, gridspec as gd
-from matplotlib.dates import YearLocator, MonthLocator
-import pylab as pl
-from IPython.display import display
+# import matplotlib as plt
+import matplotlib.pyplot as plt
+import matplotlib.backends.backend_pdf
+from cycler import cycler
+import os
+# from matplotlib.dates import YearLocator, MonthLocator
+# import pylab as pl
+# from IPython.display import display
 
-st.use('seaborn-colorblind')
+# st.use('seaborn-colorblind')
 # use of plotly:
-import plotly.offline as py
-import plotly.graph_objs as go  #important library for the plotly
-py.init_notebook_mode(connected=False) # run at the start of every ipython notebook to use plotly.offline
-from plotly import tools #to do subplots
+# import plotly.offline as py
+import pandas as pd
+# import plotly.graph_objs as go  #important library for the plotly
+# py.init_notebook_mode(connected=False) # run at the start of every ipython notebook to use plotly.offline
+# from plotly import tools #to do subplots
 
 
 # use of cufflinks:
-import cufflinks as cf
-from plotly.offline import download_plotlyjs, init_notebook_mode, plot, iplot
-init_notebook_mode(connected=False)
-cf.set_config_file(offline=True, world_readable=True, theme='ggplot')
+# import cufflinks as cf
+# from plotly.offline import download_plotlyjs, init_notebook_mode, plot, iplot
+# init_notebook_mode(connected=False)
+# cf.set_config_file(offline=True, world_readable=True, theme='ggplot')
+
 
 def set_iCol_and_iRow(iCol, iRow, nrows, ncols):
     iCol += 1
@@ -82,3 +88,56 @@ def plot_profiles_24h(df_x, df_y, states_to_plot, yLim, units, n_col=4, figsize=
         plt.show()
 
     return figures
+
+
+def superposed_profiles(df_x: pd.DataFrame, n_col=3, figsize=(16, 24)):
+    figures = list()
+
+    assert isinstance(df_x.index, pd.core.indexes.datetimes.DatetimeIndex)
+    print(type(df_x.index))
+    new_prop_cycle = cycler('color', [(0.1, 0.2, 0.5), (0.3, 0.3, 0.9), (0.1, 0.1, 0.1)]) \
+                     * cycler('linewidth', [1., 1.5, 2.]) * cycler('alpha', [0.1, 0.2, 0.5])
+    plt.rc('axes', prop_cycle=new_prop_cycle)
+    font = {'family': 'times new roman',
+            # 'weight' : 'bold',
+            'size': 26}
+    plt.rc('font', **font)
+
+    columns = df_x.columns
+
+    if len(columns) == 0:
+        return list()
+    elif len(columns) > 1 :
+        # nrows = int(np.ceil(len(columns) / n_col))
+        df_x["hour"] = [x.time() for x in df_x.index]
+        df_x["date"] = [x.date() for x in df_x.index]
+        fig, axes = None, None
+
+        for ix, col in enumerate(columns):
+            idx = ix % n_col
+            if idx == 0:
+                fig, axes = plt.subplots(nrows=1, ncols=n_col, figsize=figsize)
+            df_to_plot = df_x.pivot(index="date", columns="hour", values=col)
+            df_to_plot.dropna(inplace=True)
+            if not df_to_plot.empty:
+                df_to_plot.T.plot(legend=False, ax=axes[idx])
+                axes[idx].set_title(col)
+
+            if ((ix+1) % n_col == 0) and fig is not None:
+                figures.append(fig)
+                plt.tight_layout()
+                plt.show()
+
+        return figures
+
+
+def save_as_pdf(figures, output_path, file_name):
+
+    if not os.path.exists(output_path):
+        os.makedirs(output_path)
+    path_to_save = os.path.join(output_path, file_name)
+
+    pdf = matplotlib.backends.backend_pdf.PdfPages(path_to_save)
+    for fig in figures:  # xrange(1, figure().number): ## will open an empty extra figure :(
+        pdf.savefig(fig)
+    pdf.close()
