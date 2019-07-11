@@ -41,9 +41,9 @@ def configure_app(flask_app):
 blueprint = Blueprint('api', __name__, url_prefix='/api')
 
 
-@blueprint.route("/test")
+@blueprint.route("/testing")
 def b_test():
-    return "This is a test. Blueprint is working correctly."
+    return "This is a testing. Blueprint is working correctly."
 
 
 api_p.init_app(blueprint)

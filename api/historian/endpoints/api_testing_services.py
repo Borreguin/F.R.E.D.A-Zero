@@ -32,7 +32,7 @@ from api.historian import parsers as arg_from
 from api.historian import serializers as ser_from
 from my_lib.mongo_db_manager import RTDB_system as sys_h
 
-ns = api.namespace('test', description='Historian testing operations')
+ns = api.namespace('testing', description='Historian testing operations')
 
 ''' Test dictionary '''
 test_dict = dict(a='This a class for testing')
