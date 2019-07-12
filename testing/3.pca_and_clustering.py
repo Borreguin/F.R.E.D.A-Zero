@@ -22,6 +22,7 @@ from sklearn.decomposition import PCA
 from sklearn.cluster import DBSCAN
 from sklearn.cluster import KMeans
 from sklearn.metrics import silhouette_score
+import itertools
 
 
 import pandas as pd
@@ -46,6 +47,7 @@ for ix, col in enumerate(dataset.columns):
     fig, axes = plt.subplots(nrows=1, ncols=n_col, figsize=figsize)
     df = df_pivot.pivot(index="date", columns="hour", values=col)
     df.dropna(inplace=True)
+    print(df.info())
     x = df.values
     # Standardizing the features
     x = StandardScaler().fit_transform(x)
@@ -68,11 +70,14 @@ for ix, col in enumerate(dataset.columns):
         print(k, silhouette_avg)
     """
 
-    for k in range(1, 10):
-        eps = k*10
+    eps = [0.01, 0.1, 1, 5, 10, 50, 100]
+    min_samples = [1, 2, 5, 10]
+    leaf_size = [1, 2, 5, 10]
+    product = list(itertools.product(*[eps, min_samples, leaf_size]))
+    for e, m, l in product:
         try:
-            dbscan = DBSCAN(eps=eps, min_samples=2, leaf_size=2).fit(x)
+            dbscan = DBSCAN(eps=e, min_samples=m, leaf_size=l).fit(x)
             silhouette_avg = silhouette_score(x, dbscan.labels_)
-            print(k, silhouette_avg)
-        except Exception as e:
-            print(e)
+            print(e, m, l , silhouette_avg,  len(set(dbscan.labels_)))
+        except Exception as ex:
+            print(e, m, l, ex)
